@@ -1,5 +1,16 @@
 
 object olivia {
+	var constractura = 0
+	var pielGrasosa = true
+	method recibirMasajes() { 
+		constractura -= 2
+		if (constractura<0){
+			constractura = 0
+		}	
+	}
+	method darseUnBanioDeVapor() { pielGrasosa = false }
+	method nivelDeConstractura() { return constractura.max(0)}
+	method tienePielGrasosa(){ return pielGrasosa}
 }
 
 
@@ -22,20 +33,33 @@ object bruno {
 	method estaPerfecto() { return self.esFeliz() and not self.tieneSed() and self.peso().between(50000, 70000) }
 	method mediodiaEnCasa() { 
 		self.comerFideos()
-		// y que mas?
+		self.tomarAgua()
+		self.verElNoticiero()
 	}
 }
 
 object ramiro {
-	method recibirMasajes() { /*... completar ...*/ }
-	method darseUnBanioDeVapor() { /*... completar ...*/ }
-	method comerseUnBigMac() { /*... completar ...*/ }
-	method bajarALaFosa() { /*... completar ...*/ }
-	method jugarAlPaddle() { /*... completar ...*/ }
+	
+	var constractura = 0
+	var pielGrasosa = true
+	method recibirMasajes() { 
+		constractura -= 2
+		if (constractura<0){
+			constractura = 0
+		}	
+	}
+	method darseUnBanioDeVapor() { pielGrasosa = false }
+	method comerseUnBigMac() {  pielGrasosa = true }
+	method bajarALaFosa() { constractura += 1 }
+	method jugarAlPaddle() { constractura += 3 }
 	
 	method diaDeTrabajo() { 
-		/*... completar ...*/
+		self.bajarALaFosa()
+		self.comerseUnBigMac()
+		self.bajarALaFosa()
 	}
+	method nivelDeConstractura() { return constractura.max(0)}
+	method tienePielGrasosa(){ return pielGrasosa}
 }
 
 
