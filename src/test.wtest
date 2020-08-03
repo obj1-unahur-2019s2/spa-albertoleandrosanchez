@@ -1,0 +1,18 @@
+import spa.*
+import personas.*
+
+
+test "atender a todo el mundo" {
+
+	ramiro.jugarAlPaddle()
+	spa.atender(ramiro)
+	assert.equals(ramiro.nivelDeConstractura(), 1)
+	assert.equals(ramiro.tienePielGrasosa(),false)
+	spa.atender(olivia)
+	assert.equals(olivia.nivelDeConstractura(), 0)
+	assert.equals(olivia.tienePielGrasosa(),false)
+	spa.atender(bruno)
+	assert.equals(bruno.peso(), 54500)
+	assert.equals(bruno.esFeliz(), true)
+	assert.equals(bruno.tieneSed(), true)
+}
